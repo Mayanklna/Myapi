@@ -45,6 +45,9 @@ router.put("/:iitrid",async(req,res)=>{
         PostImages:req.body.PostImagesji,
         Postdescription:req.body.Postdescriptionji,
         Postvideo:req.body.Postvideoji,
+        link1:req.body.link1ji,
+        link2:req.body.link2ji,
+        link3:req.body.link3ji
        
       },{new:true}) 
         if(!updatebook) res.status(404).send("book not found"); 
