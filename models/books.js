@@ -15,6 +15,24 @@ const iitrupdatesscema=new mongoose.Schema({
         minlength:3,
         maxlength:2000
     },
+    link1:{
+        type:String,
+        required:true,
+        minlength:3,
+        maxlength:2000
+    },
+    link2:{
+        type:String,
+        required:true,
+        minlength:3,
+        maxlength:2000
+    },
+    link3:{
+        type:String,
+        required:true,
+        minlength:3,
+        maxlength:2000
+    },
     PostImages:{
         type:String,
         required:true,
@@ -42,6 +60,9 @@ const validateiitrupdate=(book) =>{
         PostImagesji:yup.string().required().min(3).max(2000),
         Postdescriptionji:yup.string().required().min(3).max(5000),
         Postvideoji:yup.string().required().min(3).max(2000),
+        link1ji:yup.string().required().min(3).max(2000),
+        link2ji:yup.string().required().min(3).max(2000),
+        link3ji:yup.string().required().min(3).max(2000)
  });
  return schema.validate(book).then((book)=>book).catch((error) =>{
      return {

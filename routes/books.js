@@ -12,7 +12,9 @@ router.post('/',async (req,res)=>{
       PostImages:req.body.PostImagesji,
       Postdescription:req.body.Postdescriptionji,
       Postvideo:req.body.Postvideoji,
-     
+     link1:req.body.link1ji,
+     link2:req.body.link2ji,
+     link3:req.body.link3ji
     });
     book.save().then((book)=>{
         res.send(book)
