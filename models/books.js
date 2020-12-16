@@ -3,6 +3,7 @@ const yup=require('yup');
 
 //iitrupdates scema
 const iitrupdatesscema=new mongoose.Schema({
+    
     Topicname:{
          type:String,
          required:true,
@@ -51,6 +52,13 @@ const iitrupdatesscema=new mongoose.Schema({
         minlength:3,
         maxlength:2000
     }
+    ,
+   time:{
+        type:String,
+        required:true,
+        minlength:3,
+        maxlength:2000
+    }
 
 })
 const validateiitrupdate=(book) =>{
@@ -62,7 +70,8 @@ const validateiitrupdate=(book) =>{
         Postvideoji:yup.string().required().min(3).max(2000),
         link1ji:yup.string().required().min(3).max(2000),
         link2ji:yup.string().required().min(3).max(2000),
-        link3ji:yup.string().required().min(3).max(2000)
+        link3ji:yup.string().required().min(3).max(2000),
+        timeji:yup.string().required().min(3).max(2000)
  });
  return schema.validate(book).then((book)=>book).catch((error) =>{
      return {

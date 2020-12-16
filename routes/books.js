@@ -14,7 +14,8 @@ router.post('/',async (req,res)=>{
       Postvideo:req.body.Postvideoji,
      link1:req.body.link1ji,
      link2:req.body.link2ji,
-     link3:req.body.link3ji
+     link3:req.body.link3ji,
+     time:req.body.timeji
     });
     book.save().then((book)=>{
         res.send(book)
@@ -37,6 +38,7 @@ router.get("/:iitrid",async(req,res)=>{
         res.send(book);
     
 }) 
+
 //update the specific iitrpost
 router.put("/:iitrid",async(req,res)=>{
     const updatebook=await IITRUPDATES.findByIdAndUpdate(req.params.iitrid,{
@@ -47,8 +49,8 @@ router.put("/:iitrid",async(req,res)=>{
         Postvideo:req.body.Postvideoji,
         link1:req.body.link1ji,
         link2:req.body.link2ji,
-        link3:req.body.link3ji
-       
+        link3:req.body.link3ji,
+       time:req.body.timeji
       },{new:true}) 
         if(!updatebook) res.status(404).send("book not found"); 
 
